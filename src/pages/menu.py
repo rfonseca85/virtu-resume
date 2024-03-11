@@ -1,8 +1,11 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
-import src.pages.settings as settings
+import src.pages.resume_upload as resume_upload
+import src.pages.cover_letter as cover_letter
+import src.pages.resume_analisis as resume_analisis
+import user_management as user_management
 
-def page():
+def main(authenticator):
 
     # CSS style definitions
     custom_css = f"""
@@ -71,22 +74,21 @@ def page():
     # Use the CSS in Streamlit
     st.markdown(custom_css, unsafe_allow_html=True)
 
-
     with st.sidebar:
         # CSS style definitions
         company_name = "Virtu.resume"
-        menu_selected = option_menu(company_name, ["Project Cost", "Capacity Calculator", "Project Scope (TBD)", 'Settings'],
-                                    icons=['currency-dollar', 'battery-half', 'bar-chart', "gear"],
+        menu_selected = option_menu(company_name, ["Resume Upload", "Cover Letter", 'Resume Analisis', 'User Settings'],
+                                    icons=['person-lines-fill', 'card-text', 'card-text', 'person-circle'],
                                     menu_icon="rocket-takeoff", default_index=0, orientation="vertical")
         
-    if menu_selected == "Project Cost":
-        return st.write("Project Cost")
-    elif menu_selected == "Capacity Calculator":
-        return st.write("Capacity Calculator")
-    elif menu_selected == "Project Scope (TBD)":
-        return st.write("Project Scope (TBD)")
-    elif menu_selected == "Settings":
-        return settings.main()
+    if menu_selected == "Resume Upload":
+        return resume_upload.main()
+    elif menu_selected == "Cover Letter":
+        return cover_letter.main()
+    elif menu_selected == "Resume Analisis":
+        return resume_analisis.main()
+    elif menu_selected == "User Settings":
+        return user_management.user_settings(authenticator)
     else:
         return st.write("Error")
     

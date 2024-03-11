@@ -1,0 +1,19 @@
+cookie:
+  expiry_days: 30
+  key: some_signature_key
+  name: some_cookie_name
+credentials:
+  usernames:
+    gabi:
+      email: rbriggs@gmail.com
+      logged_in: false
+      name: Ana Gabriela
+      password:
+    rafael:
+      email: jsmith@gmail.com
+      logged_in: true
+      name: Rafael Fonseca
+      password:
+preauthorized:
+  emails:
+    - melsby@gmail.com
