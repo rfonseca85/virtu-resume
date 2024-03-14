@@ -96,7 +96,7 @@ def generate_analisis(resume_text):
     else:
         generated_response = None
 
-    return generated_response.strip() if generated_response else "Failed to generate cover letter."
+    return generated_response.strip() if generated_response else "Failed to generate improvements."
 
 
 def display_list_of_improvements(improvements_json):
