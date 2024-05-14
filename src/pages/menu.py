@@ -3,6 +3,7 @@ from streamlit_option_menu import option_menu
 import src.pages.resume_upload as resume_upload
 import src.pages.cover_letter as cover_letter
 import src.pages.resume_analisis as resume_analisis
+import src.pages.job_board as job_board
 import user_management as user_management
 
 def main(authenticator):
@@ -77,8 +78,8 @@ def main(authenticator):
     with st.sidebar:
         # CSS style definitions
         company_name = "Virtu.resume"
-        menu_selected = option_menu(company_name, ["Resume Upload", "Cover Letter", 'Resume Analisis', 'User Settings'],
-                                    icons=['person-lines-fill', 'card-text', 'card-text', 'person-circle'],
+        menu_selected = option_menu(company_name, ["Resume Upload", "Cover Letter", 'Resume Analisis', "Job Board", 'User Settings'],
+                                    icons=['person-lines-fill', 'card-text', 'card-text', 'card-text', 'person-circle'],
                                     menu_icon="rocket-takeoff", default_index=0, orientation="vertical")
         
     if menu_selected == "Resume Upload":
@@ -87,6 +88,8 @@ def main(authenticator):
         return cover_letter.main()
     elif menu_selected == "Resume Analisis":
         return resume_analisis.main()
+    elif menu_selected == "Job Board":
+        return job_board.main()
     elif menu_selected == "User Settings":
         return user_management.user_settings(authenticator)
     else:

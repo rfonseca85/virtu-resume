@@ -6,3 +6,4 @@ streamlit_shadcn_ui
 PyMuPDF
 openai
 streamlit-authenticator
+selenium

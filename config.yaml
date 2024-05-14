@@ -8,12 +8,12 @@ credentials:
       email: rbriggs@gmail.com
       logged_in: false
       name: Ana Gabriela
-      password:
+      password: $2b$12$vX5N8Ma3IdjZ2MBihrjrS.VOXffh6p2NEmtbQIvhUUzomXlLuN7cO
     rafael:
       email: jsmith@gmail.com
       logged_in: true
       name: Rafael Fonseca
-      password:
+      password: $2b$12$vX5N8Ma3IdjZ2MBihrjrS.VOXffh6p2NEmtbQIvhUUzomXlLuN7cO
 preauthorized:
   emails:
     - melsby@gmail.com
